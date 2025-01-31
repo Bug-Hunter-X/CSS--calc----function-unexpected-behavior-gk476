@@ -1,0 +1,10 @@
+The CSS property `calc()` is used to perform calculations in CSS, but sometimes unexpected results may occur due to incorrect usage or interactions with other CSS properties.  For example, using `calc()` with percentages can lead to unexpected outcomes if not handled carefully.  Another issue is using `calc()` with units inconsistently. 
+
+```css
+.element {
+  width: calc(100% - 50px);
+  /* Correct usage */
+  height: calc(100% - 50px); /* Correct usage */
+  margin: calc(10% - 10px); /* Inconsistent units: may lead to unexpected results */
+}
+```
