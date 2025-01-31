@@ -1,0 +1,30 @@
+The solution involves ensuring consistent unit usage within the `calc()` function.  Mixing units can cause problems.
+
+```css
+.element {
+  width: calc(100% - 50px);
+  /* Correct usage */
+  height: calc(100% - 50px); /* Correct usage */
+  margin: calc(10% - 10px); /*Inconsistent units: needs correction*/
+}
+
+/* Solution */
+.element {
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  margin: calc(10% - 10%); /* Consistent units */
+}
+
+/* Alternative, clearer approach with variables */
+:root {
+  --margin-percent: 10%;
+  --margin-px: 10px; /* Or calculate this value if needed */
+}
+
+.element {
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  margin: calc(var(--margin-percent) - var(--margin-px));
+}
+
+```
